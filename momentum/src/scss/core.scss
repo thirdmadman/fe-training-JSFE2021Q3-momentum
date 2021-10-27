@@ -256,8 +256,6 @@ $color-dark-s: #777777;
           }
         }
       }
-
-
     }
 
     .button-configs {
@@ -279,6 +277,18 @@ $color-dark-s: #777777;
 
     .weather-forecast {
       width: 320px;
+
+      .weather-forecast__overlay {
+        transition: all 0.5s;
+        opacity: 1;
+        &_hidden {
+          opacity: 0;
+          margin-top: -999px;
+          transition: all 0.5s;
+          height: 0;
+        }
+      }
+
       .weather-forecast__button-close {
         background: url("/src/assets/img/svg/icons/button-close.svg");
         background-repeat: no-repeat;
@@ -309,6 +319,7 @@ $color-dark-s: #777777;
 
         margin-top: 30px;
 
+        margin-left: auto;
         &:active {
           transform: scale(0.9);
         }
@@ -323,7 +334,7 @@ $color-dark-s: #777777;
         font-style: normal;
         font-weight: 500;
         font-size: 30px;
-        line-height: 37px;
+        line-height: 47px;
         text-align: center;
         border-bottom: 3px solid $color-light-xl;
       }
