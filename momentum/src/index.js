@@ -21,3 +21,5 @@ let momentumCore = new MomentumCore("momentum-app");
 momentumCore.addPlaylist(playlist);
 
 console.log("Hello there!\nI ask you, to give me little more time on this task: crosscheck deadline -6 hours.\nIt took me some time to make kind of design in figma https://www.figma.com/file/XbzieAkmajuzg1zUpYOSIY/Momentum\nSo I have had less time on this, hope I will end this task");
+console.log("Still in progress...");
+console.log("Added after deadline:\nJS clock function\nMusic player, hide it button");
