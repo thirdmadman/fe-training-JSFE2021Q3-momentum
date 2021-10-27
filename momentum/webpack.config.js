@@ -90,10 +90,10 @@ module.exports = {
         test: /\.html$/i,
         loader: "html-loader",
       },
-      // {
-      //   test: /\.(png|jpg|svg|gif|webp)$/,
-      //   use: ["file-loader"],
-      // },
+      {
+        test: /\.(mp3)$/,
+        use: ["file-loader"],
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
