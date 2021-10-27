@@ -1,11 +1,5 @@
 import MomentumCore from "./js/MomentumCore.js";
 import "./scss/style.scss";
-// require("./assets/music/01_plour_-_sura.mp3");
-// require("./assets/music/02_plour_-_saratov_reservoir.mp3");
-// require("./assets/music/03_plour_-_uglichskoye_reservoir.mp3");
-//let gg = require("./assets/music/04_plour_-_vlaga.mp3");
-import gg from "./assets/music/04_plour_-_vlaga.mp3";
-console.log(gg);
 
 const importAll = (require) =>
   require.keys().reduce((acc, next) => {

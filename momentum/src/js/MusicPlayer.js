@@ -34,6 +34,7 @@ class MusicPlayer {
     this.renderPlaylist();
   }
 
+
   hidePlayer() {
     this.rooEl.getElementsByClassName("music-player__button-close")[0].classList.add("music-player__button-close_hidden");
     this.rooEl.getElementsByClassName("music-player__overlay")[0].classList.add("music-player__overlay_hidden");
@@ -67,16 +68,16 @@ class MusicPlayer {
   scrollTrackTo(porc) {
     if (this.audio) {
       this.audio.currentTime = (this.audio.duration / 100) * porc;
-      this.renderTrackPos();
+      this.renderTrackPos(true);
     }
   }
 
-  renderTrackPos() {
+  renderTrackPos(isSrcoll) {
     if (this.audio) {
       let proc = this.audio.currentTime / (this.audio.duration / 100);
       this.rooEl.getElementsByClassName("player-controls__scroll")[0].style.background = `linear-gradient(90deg, #eeeeee ${proc}%, #777777 ${proc}%)`;
-      if (this.isPlaying) {
-        setTimeout(() => this.renderTrackPos(), 100);
+      if (this.isPlaying && !isSrcoll) {
+        setTimeout(() => this.renderTrackPos(), 1000);
       }
     } else {
       this.rooEl.getElementsByClassName("player-controls__scroll")[0].style.background = `linear-gradient(90deg, #eeeeee 0%, #777777 0%)`;
@@ -143,6 +144,13 @@ class MusicPlayer {
 
     this.audio = null;
     this.isPlaying = false;
+  }
+
+  pause() {
+    if (this.audio) {
+      this.audio.pause();
+      this.isPlaying = false;
+    }
   }
 
   prev() {
