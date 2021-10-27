@@ -191,7 +191,6 @@ $color-dark-s: #777777;
         input[type="range"].player-controls__scroll {
           width: 320px;
           margin-top: 32px;
-          margin-top: 10px;
           background: linear-gradient(90deg, $color-light-xl 50%, $color-dark-s 50%);
         }
 
@@ -377,9 +376,9 @@ $color-dark-s: #777777;
       }
     }
 
-    .day-phrase {
+    .day-quote {
       text-align: center;
-      .day-phrase__title {
+      .day-quote__title {
         font-family: Roboto;
         font-style: normal;
         font-weight: 300;
@@ -387,7 +386,7 @@ $color-dark-s: #777777;
         line-height: 45px;
       }
 
-      .day-phrase__text {
+      .day-quote__text {
         font-size: 32px;
         line-height: 50px;
         margin-bottom: 50px;
