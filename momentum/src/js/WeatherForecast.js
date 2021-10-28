@@ -62,7 +62,6 @@ class WeatherForecast {
       })
       .then((currentWeatherData) => {
         if (currentWeatherData) {
-          console.log(currentWeatherData);
           if (currentWeatherData.error && currentWeatherData.error.code === 1006) {
             this.currentWeather.error = currentWeatherData.error.message;
           } else {
@@ -87,7 +86,6 @@ class WeatherForecast {
       })
       .then((weatherData) => {
         if (weatherData) {
-          console.log(weatherData);
           if (weatherData.error && weatherData.error.code === 1006) {
             this.upcomingWeather.error = weatherData.error.message;
           } else {

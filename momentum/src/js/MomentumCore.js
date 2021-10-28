@@ -4,6 +4,7 @@ const MusicPlayer = require("./MusicPlayer.js");
 const DayQuote = require("./DayQuote.js");
 const WeatherForecast = require("./WeatherForecast.js");
 const Greetings = require("./Greetings.js");
+const Configs = require("./Configs.js");
 
 const defaultQuotes = require("./defaultQuotes.json");
 class MomentumCore {
@@ -19,26 +20,34 @@ class MomentumCore {
     }
 
     this.weatherForecast = new WeatherForecast(this.className);
+    this.configs = new Configs(this.className);
+    this.configData = this.configs.loadData();
 
-    this.timeTracker();
-  }
+    this.setConfigs();
 
-  timeTracker() {
-    let hour = new Date().getHours();
-    if (hour >= 6 && hour < 12) {
-      this.greetings.setGreetingsText("Good morning,");
-    } else if (hour >= 12 && hour < 18) {
-      this.greetings.setGreetingsText("Good afternoon,");
-    } else if (hour >= 18 && hour < 24) {
-      this.greetings.setGreetingsText("Good evening,");
-    } else if (hour >= 0 && hour < 6) {
-      this.greetings.setGreetingsText("Good night,");
-    }
-
+    document.getElementsByClassName(this.className)[0]
+      .getElementsByClassName("configs__button-save")[0]
+      .addEventListener(
+        "click",
+        () => {
+          this.configs.save();
+          this.configData = this.configs.loadData();
+          this.setConfigs();
+        },
+        false
+      );
   }
 
   addPlaylist(songsArray) {
     this.musicPlayer.setPlayList(songsArray);
+  }
+
+  setConfigs() {
+    if (this.configData) {
+      this.greetings.setUserName(this.configData.greetings.name);
+      this.weatherForecast.setCity(this.configData.weatherForecast.city);
+    }
+    console.log("set");
   }
 }
 module.exports = MomentumCore;
