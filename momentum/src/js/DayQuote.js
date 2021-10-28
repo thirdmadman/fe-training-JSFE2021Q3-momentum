@@ -3,8 +3,8 @@ class DayQuote {
     this.parentClassName = className;
     this.className = "day-quote";
 
-    this.defaultTitle = "Phrase of the day by ";
-    this.defaultTitleWithRemimnder = "Phrase of the day (click for update) ";
+    this.defaultTitle = "Quote of the day by ";
+    this.defaultTitleWithRemimnder = "Quote of the day (click for update) ";
 
     this.quotesArray = [{ authorName: "No one", text: "You will never know what on the bottom of abyss, until you actually fall on this bottom" }];
     this.currentQuoteId = 0;
@@ -20,8 +20,16 @@ class DayQuote {
     this.render(true);
   }
 
+  getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
   render(isFirstTime) {
     let authorName = "";
+
+    this.currentQuoteId = this.getRandomInt(0, this.quotesArray.length);
     if (isFirstTime) {
       authorName = this.defaultTitleWithRemimnder;
     } else {
