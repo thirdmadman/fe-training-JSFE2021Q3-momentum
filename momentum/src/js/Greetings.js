@@ -12,9 +12,22 @@ class Greetings {
     this.render();
   }
 
-  setUsernName(text) {
+  setUserName(text) {
     this.userName = text;
     this.render();
+  }
+
+  timeTracker() {
+    let hour = new Date().getHours();
+    if (hour >= 6 && hour < 12) {
+      this.greetingsText = "Good morning,";
+    } else if (hour >= 12 && hour < 18) {
+      this.greetingsText = "Good afternoon,";
+    } else if (hour >= 18 && hour < 24) {
+      this.greetingsText = "Good evening,";
+    } else if (hour >= 0 && hour < 6) {
+      this.greetingsText = "Good night,";
+    }
   }
 
   setGreetingsText(text) {
@@ -23,6 +36,8 @@ class Greetings {
   }
 
   render() {
+    this.timeTracker();
+
     let greetingsText = this.rooEl.getElementsByClassName("greetings__text")[0];
     let greetingsUserName = this.rooEl.getElementsByClassName("greetings__name")[0];
 
