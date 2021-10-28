@@ -245,7 +245,11 @@ $color-dark-s: #777777;
           cursor: pointer;
           transition: all 0.5s;
 
-          &:hover {
+          &_playing {
+            font-weight: bold;
+          }
+
+          &:hover:not(&_playing) {
             padding-left: 30px;
             background-repeat: no-repeat;
             background-position: left center;
