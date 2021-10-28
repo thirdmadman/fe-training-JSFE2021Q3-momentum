@@ -93,7 +93,8 @@ class MusicPlayer {
     } else {
       this.rooEl.getElementsByClassName("player-controls__button_play")[0].classList.remove("player-controls__button_playing");
     }
-    this.renderTrackPos()
+    this.renderTrackPos();
+    this.renderPlaylist();
   }
 
   renderPlaylist() {
@@ -109,6 +110,9 @@ class MusicPlayer {
           this.currentTrack = i;
           this.switchPlay();
         });
+        if (this.currentTrack === i) {
+          playlistEl.classList.add("player-playlist__songs-list-element_playing");
+        }
         this.rooEl.getElementsByClassName("player-playlist__songs-list")[0].appendChild(playlistEl);
       });
     }
