@@ -2,7 +2,7 @@ $color-light-xl: #eeeeee;
 $color-dark-s: #777777;
 
 .momentum-app {
-  background: url("/src/assets/img/jpg/default-background.jpg");
+  background: url('/src/assets/img/jpg/default-background.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -35,7 +35,7 @@ $color-dark-s: #777777;
 
     &_hidden {
       opacity: 0;
-      margin-top: -100%;
+      margin-top: -1000%;
       transition: all 0.5s ease-in-out;
     }
 
@@ -66,15 +66,51 @@ $color-dark-s: #777777;
       padding-bottom: 0;
     }
 
-    .line {
+    .control-buttons {
       display: flex;
       justify-content: space-between;
+
+      .button-open {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
+
+        &_hidden {
+          height: 0;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .music-player__button-open {
+        margin-top: 30px;
+        background-image: url('/src/assets/img/svg/icons/playlist.svg');
+      }
+
+      .button-configs {
+        margin-top: 30px;
+        background-image: url('/src/assets/img/svg/icons/configs.svg');
+      }
+
+      .weather-forecast__button-open {
+        margin-top: 30px;
+        background-image: url('/src/assets/img/svg/icons/weather-forecast.svg');
+      }
     }
 
     .music-player {
-      min-width: 320px;
+      position: absolute;
+      width: 320px;
+      top: 50px;
+      left: 20px;
+      z-index: 2;
       .music-player__button-close {
-        background: url("/src/assets/img/svg/icons/button-close.svg");
+        background: url('/src/assets/img/svg/icons/button-close.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -89,24 +125,6 @@ $color-dark-s: #777777;
 
         &_hidden {
           display: none;
-        }
-      }
-      .music-player__button-open {
-        background: url("/src/assets/img/svg/icons/playlist.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 75px;
-        height: 75px;
-        cursor: pointer;
-        margin-top: 30px;
-
-        &_hidden {
-          display: none;
-        }
-
-        &:active {
-          transform: scale(0.9);
         }
       }
 
@@ -129,22 +147,22 @@ $color-dark-s: #777777;
       }
 
       .player-controls {
-        input[type="range"] {
+        input[type='range'] {
           -webkit-appearance: none;
           width: 100%;
           background: transparent;
         }
 
-        input[type="range"]::-webkit-slider-thumb {
+        input[type='range']::-webkit-slider-thumb {
           -webkit-appearance: none;
           width: 5px;
         }
 
-        input[type="range"]:focus {
+        input[type='range']:focus {
           outline: none;
         }
 
-        input[type="range"]::-ms-track {
+        input[type='range']::-ms-track {
           width: 100%;
           cursor: pointer;
           background: transparent;
@@ -152,17 +170,17 @@ $color-dark-s: #777777;
           color: transparent;
         }
 
-        input[type="range"]::-webkit-slider-runnable-track {
+        input[type='range']::-webkit-slider-runnable-track {
           height: 3px;
           cursor: pointer;
         }
 
-        input[type="range"]::-moz-range-track {
+        input[type='range']::-moz-range-track {
           height: 3px;
           cursor: pointer;
         }
 
-        input[type="range"]::-ms-track {
+        input[type='range']::-ms-track {
           height: 3px;
           cursor: pointer;
         }
@@ -186,20 +204,20 @@ $color-dark-s: #777777;
           }
 
           &_prev {
-            background: url("/src/assets/img/svg/icons/button-prev-song.svg");
+            background: url('/src/assets/img/svg/icons/button-prev-song.svg');
           }
           &_play {
-            background: url("/src/assets/img/svg/icons/button-play-song.svg");
+            background: url('/src/assets/img/svg/icons/button-play-song.svg');
           }
           &_next {
-            background: url("/src/assets/img/svg/icons/button-next-song.svg");
+            background: url('/src/assets/img/svg/icons/button-next-song.svg');
           }
           &_playing {
-            background: url("/src/assets/img/svg/icons/button-pause-song.svg");
+            background: url('/src/assets/img/svg/icons/button-pause-song.svg');
           }
         }
 
-        input[type="range"].player-controls__scroll {
+        input[type='range'].player-controls__scroll {
           width: 320px;
           margin-top: 32px;
           background: linear-gradient(90deg, $color-light-xl 50%, $color-dark-s 50%);
@@ -234,11 +252,11 @@ $color-dark-s: #777777;
           }
 
           &_prev {
-            background-image: url("/src/assets/img/svg/icons/button-prev-page.svg");
+            background-image: url('/src/assets/img/svg/icons/button-prev-page.svg');
           }
 
           &_next {
-            background-image: url("/src/assets/img/svg/icons/button-next-page.svg");
+            background-image: url('/src/assets/img/svg/icons/button-next-page.svg');
           }
         }
 
@@ -265,7 +283,7 @@ $color-dark-s: #777777;
             background-repeat: no-repeat;
             background-position: left center;
             background-size: 24px;
-            background-image: url("/src/assets/img/svg/icons/button-play-song.svg");
+            background-image: url('/src/assets/img/svg/icons/button-play-song.svg');
 
             transition: all 0.2s;
           }
@@ -273,26 +291,12 @@ $color-dark-s: #777777;
       }
     }
 
-    .button-configs {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-      height: 75px;
-      width: 75px;
-
-      cursor: pointer;
-      background-image: url("/src/assets/img/svg/icons/configs.svg");
-
-      margin-top: 30px;
-
-      &:active {
-        transform: scale(0.9);
-      }
-    }
-
     .weather-forecast {
+      position: absolute;
       width: 320px;
-
+      top: 50px;
+      right: 20px;
+      z-index: 2;
       .weather-forecast__overlay {
         transition: all 0.5s;
         opacity: 1;
@@ -305,7 +309,7 @@ $color-dark-s: #777777;
       }
 
       .weather-forecast__button-close {
-        background: url("/src/assets/img/svg/icons/button-close.svg");
+        background: url('/src/assets/img/svg/icons/button-close.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -314,27 +318,6 @@ $color-dark-s: #777777;
 
         cursor: pointer;
 
-        &:active {
-          transform: scale(0.9);
-        }
-
-        &_hidden {
-          display: none;
-        }
-      }
-      .weather-forecast__button-open {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        height: 75px;
-        width: 75px;
-
-        cursor: pointer;
-        background-image: url("/src/assets/img/svg/icons/weather-forecast.svg");
-
-        margin-top: 30px;
-
-        margin-left: auto;
         &:active {
           transform: scale(0.9);
         }
@@ -436,7 +419,7 @@ $color-dark-s: #777777;
       background-size: auto;
       z-index: 2;
 
-      background-image: url("/src/assets/img/svg/icons/button-prev-background.svg");
+      background-image: url('/src/assets/img/svg/icons/button-prev-background.svg');
 
       &:active {
         transform: scale(0.9);
@@ -455,7 +438,7 @@ $color-dark-s: #777777;
       background-size: auto;
       z-index: 2;
 
-      background-image: url("/src/assets/img/svg/icons/button-nex-background.svg");
+      background-image: url('/src/assets/img/svg/icons/button-nex-background.svg');
 
       &:active {
         transform: scale(0.9);
@@ -475,12 +458,12 @@ $color-dark-s: #777777;
       transition: all 0.5s;
 
       &_hidden {
-        margin-top: -100%;
+        margin-top: -1000%;
         transition: all 0.5s;
       }
 
       &__button-close {
-        background: url("/src/assets/img/svg/icons/button-close.svg");
+        background: url('/src/assets/img/svg/icons/button-close.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -497,7 +480,8 @@ $color-dark-s: #777777;
       &__button-save {
         all: unset;
         border: 3px solid $color-light-xl;
-        min-width: 314px;
+        max-width: 310px;
+        width: 100%;
         text-align: center;
         padding: 5px 0;
 

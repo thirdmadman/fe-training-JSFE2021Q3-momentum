@@ -25,8 +25,10 @@ class WeatherForecast {
 
     this.rooEl = document.getElementsByClassName(this.parentClassName)[0].getElementsByClassName(this.className)[0];
 
+    this.controlButtonsEl = document.getElementsByClassName('control-buttons')[0];
+
     this.rooEl.getElementsByClassName("weather-forecast__button-close")[0].addEventListener("click", () => this.hide());
-    this.rooEl.getElementsByClassName("weather-forecast__button-open")[0].addEventListener("click", () => this.show());
+    this.controlButtonsEl.getElementsByClassName("weather-forecast__button-open")[0].addEventListener("click", () => this.show());
     this.getCurrentWeather();
     this.getupcomingWeather();
     this.render();
@@ -43,7 +45,7 @@ class WeatherForecast {
   }
 
   show() {
-    this.rooEl.getElementsByClassName("weather-forecast__button-open")[0].classList.add("weather-forecast__button-open_hidden");
+    this.controlButtonsEl.getElementsByClassName("weather-forecast__button-open")[0].classList.add("button-open_hidden");
     this.rooEl.getElementsByClassName("weather-forecast__overlay")[0].classList.remove("weather-forecast__overlay_hidden");
     this.rooEl.getElementsByClassName("weather-forecast__button-close")[0].classList.remove("weather-forecast__button-close_hidden");
   }
@@ -51,7 +53,7 @@ class WeatherForecast {
   hide() {
     this.rooEl.getElementsByClassName("weather-forecast__button-close")[0].classList.add("weather-forecast__button-close_hidden");
     this.rooEl.getElementsByClassName("weather-forecast__overlay")[0].classList.add("weather-forecast__overlay_hidden");
-    this.rooEl.getElementsByClassName("weather-forecast__button-open")[0].classList.remove("weather-forecast__button-open_hidden");
+    this.controlButtonsEl.getElementsByClassName("weather-forecast__button-open")[0].classList.remove("button-open_hidden");
   }
 
   getCurrentWeather() {

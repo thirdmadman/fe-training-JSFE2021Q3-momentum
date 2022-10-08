@@ -2,7 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 @import "/src/scss/core.scss";
-
+@import "/src/scss/adaptive-1440px.scss";
+@import "/src/scss/adaptive-1024px.scss";
+@import "/src/scss/adaptive-800px.scss";
+@import "/src/scss/adaptive-420px.scss";
+@import "/src/scss/adaptive-320px.scss";
 
 * {
   scroll-behavior: smooth;
