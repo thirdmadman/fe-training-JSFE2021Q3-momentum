@@ -38,15 +38,13 @@ class MusicPlayer {
   }
 
   hidePlayer() {
-    this.rooEl.getElementsByClassName('music-player__button-close')[0].classList.add('music-player__button-close_hidden');
-    this.rooEl.getElementsByClassName('music-player__overlay')[0].classList.add('music-player__overlay_hidden');
+    this.rooEl.classList.add('music-player_hidden');
     this.controlButtonsEl.getElementsByClassName('music-player__button-open')[0].classList.remove('button-open_hidden');
   }
 
   showPlayer() {
     this.controlButtonsEl.getElementsByClassName('music-player__button-open')[0].classList.add('button-open_hidden');
-    this.rooEl.getElementsByClassName('music-player__button-close')[0].classList.remove('music-player__button-close_hidden');
-    this.rooEl.getElementsByClassName('music-player__overlay')[0].classList.remove('music-player__overlay_hidden');
+    this.rooEl.classList.remove('music-player_hidden');
   }
 
   addToPlaylist(songName, src) {

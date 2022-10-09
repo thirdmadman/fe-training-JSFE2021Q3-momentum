@@ -60,6 +60,7 @@ $color-dark-s: #777777;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+      align-items: center;
       position: absolute;
       z-index: 2;
       width: 100%;
@@ -69,8 +70,10 @@ $color-dark-s: #777777;
     }
 
     .control-buttons {
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
+      width: 100%;
 
       .button-open {
         background-size: contain;
@@ -90,17 +93,14 @@ $color-dark-s: #777777;
       }
 
       .music-player__button-open {
-        margin-top: 30px;
         background-image: url('/src/assets/img/svg/icons/playlist.svg');
       }
 
       .button-configs {
-        margin-top: 30px;
         background-image: url('/src/assets/img/svg/icons/configs.svg');
       }
 
       .weather-forecast__button-open {
-        margin-top: 30px;
         background-image: url('/src/assets/img/svg/icons/weather-forecast.svg');
       }
     }
@@ -109,14 +109,29 @@ $color-dark-s: #777777;
       position: absolute;
       width: 320px;
       top: 50px;
-      left: 20px;
+      left: 50px;
       z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      transition: all 0.5s;
+      opacity: 1;
+      &_hidden {
+        opacity: 0;
+        margin-top: -999px;
+        transition: all 0.5s;
+      }
+
       .music-player__button-close {
         background: url('/src/assets/img/svg/icons/button-close.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
         height: 10px;
+        width: 60px;
         margin-bottom: 20px;
 
         cursor: pointer;
@@ -124,22 +139,10 @@ $color-dark-s: #777777;
         &:active {
           transform: scale(0.9);
         }
-
-        &_hidden {
-          display: none;
-        }
       }
 
       .music-player__overlay {
-        transition: all 0.5s;
-        opacity: 1;
-        &_hidden {
-          //position: absolute;
-          opacity: 0;
-          //top: -999px;
-          margin-top: -999px;
-          transition: all 0.5s;
-        }
+
       }
 
       .music-player__container {
@@ -297,17 +300,25 @@ $color-dark-s: #777777;
       position: absolute;
       width: 320px;
       top: 50px;
-      right: 20px;
+      right: 50px;
       z-index: 2;
-      .weather-forecast__overlay {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      transition: all 0.5s;
+      opacity: 1;
+      &_hidden {
+        opacity: 0;
+        margin-top: -999px;
         transition: all 0.5s;
-        opacity: 1;
-        &_hidden {
-          opacity: 0;
-          margin-top: -999px;
-          transition: all 0.5s;
-          height: 0;
-        }
+        height: 0;
+      }
+
+      .weather-forecast__overlay {
+
       }
 
       .weather-forecast__button-close {
@@ -316,16 +327,13 @@ $color-dark-s: #777777;
         background-position: center;
         background-size: auto;
         height: 10px;
+        width: 60px;
         margin-bottom: 20px;
 
         cursor: pointer;
 
         &:active {
           transform: scale(0.9);
-        }
-
-        &_hidden {
-          display: none;
         }
       }
 

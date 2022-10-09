@@ -1,5 +1,19 @@
 @media only screen and (min-width: 1440px) and (max-width: 1920px){
   .momentum-app {
+
+    .greetings {
+
+      font-size: 86px;
+
+      .greetings__text {
+        line-height: 90px;
+        margin-bottom: 50px;
+      }
+      .greetings__name {
+        line-height: 90px;
+      }
+    }
+
     .momentum-app__overlay {
       .date-time {
         .date-time__time {
