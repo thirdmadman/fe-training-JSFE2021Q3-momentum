@@ -1,14 +1,50 @@
 [
   {
-    "authorName": "No one", "text": "You will never know what on the bottom of abyss, until you actually fall on this bottom"
+    "authorName": "Lao Tzu",
+    "text": "The journey of a thousand miles begins with one step."
   },
   {
-    "authorName": "Max Payne", "text": "In the land of the blind, the one-eyed man is king."
+    "authorName": "Friedrich Nietzsche",
+    "text": "That which does not kill us makes us stronger."
   },
   {
-    "authorName": "J-P. Sartre, Nausea", "text": "But even my death would have been In the way."
+    "authorName": "John Lennon",
+    "text": "Life is what happens when you’re busy making other plans."
   },
   {
-    "authorName": "Muddasheep", "text": "You might get weapons to fight your way through, but you will never be able to escape."
+    "authorName": "Joe Kennedy",
+    "text": "When the going gets tough, the tough get going."
+  },
+  {
+    "authorName": "Mahatma Gandhi",
+    "text": "You must be the change you wish to see in the world."
+  },
+  {
+    "authorName": "Mae West",
+    "text": "You only live once, but if you do it right, once is enough."
+  },
+  {
+    "authorName": "Robert H. Schuller",
+    "text": "Tough times never last but tough people do."
+  },
+  {
+    "authorName": "Stephen King",
+    "text": "Get busy living or get busy dying."
+  },
+  {
+    "authorName": "Henry Ford",
+    "text": "Whether you think you can or you think you cant, youre right."
+  },
+  {
+    "authorName": "Alrded Lord Tennyson",
+    "text": "Tis better to have loved and lost than to have never loved at all."
+  },
+  {
+    "authorName": "Sir Francis Bacon",
+    "text": "A man is but what he knows."
+  },
+  {
+    "authorName": "Wayne Gretzky",
+    "text": "You miss 100 percent of the shots you never take."
   }
 ]
