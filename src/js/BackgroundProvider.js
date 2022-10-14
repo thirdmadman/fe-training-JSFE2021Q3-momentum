@@ -1,24 +1,16 @@
 class BackgroundProvider {
   constructor() {
-    this.imageArray = []; 
+    this.imageArray = [];
 
     this.updateArray();
   }
 
-  getNextImage() {
+  // getNextImage() {}
 
-  }
+  // getPreviousImage() {}
 
-  getPreviousImage() {
+  // updateArray() {}
 
-  }
-
-  updateArray() {
-
-  }
-
-  mixArray() {
-
-  }
+  // mixArray() {}
 }
 module.exports = BackgroundProvider;

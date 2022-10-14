@@ -1,12 +1,13 @@
-const MomentumClock = require("./MomentumClock.js");
-const BackgroundProvider = require("./BackgroundProvider.js");
-const MusicPlayer = require("./MusicPlayer.js");
-const DayQuote = require("./DayQuote.js");
-const WeatherForecast = require("./WeatherForecast.js");
-const Greetings = require("./Greetings.js");
-const Configs = require("./Configs.js");
+const MomentumClock = require('./MomentumClock');
+const BackgroundProvider = require('./BackgroundProvider');
+const MusicPlayer = require('./MusicPlayer');
+const DayQuote = require('./DayQuote');
+const WeatherForecast = require('./WeatherForecast');
+const Greetings = require('./Greetings');
+const Configs = require('./Configs');
 
-const defaultQuotes = require("./defaultQuotes.json");
+const defaultQuotes = require('./defaultQuotes');
+
 class MomentumCore {
   constructor(className) {
     this.className = className;
@@ -25,16 +26,17 @@ class MomentumCore {
 
     this.setConfigs();
 
-    document.getElementsByClassName(this.className)[0]
-      .getElementsByClassName("configs__button-save")[0]
+    document
+      .getElementsByClassName(this.className)[0]
+      .getElementsByClassName('configs__button-save')[0]
       .addEventListener(
-        "click",
+        'click',
         () => {
           this.configs.save();
           this.configData = this.configs.loadData();
           this.setConfigs();
         },
-        false
+        false,
       );
   }
 
@@ -47,7 +49,6 @@ class MomentumCore {
       this.greetings.setUserName(this.configData.greetings.name);
       this.weatherForecast.setCity(this.configData.weatherForecast.city);
     }
-    console.log("set");
   }
 }
 module.exports = MomentumCore;

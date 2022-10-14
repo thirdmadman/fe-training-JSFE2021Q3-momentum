@@ -31,7 +31,7 @@ class MusicPlayer {
       (e) => {
         this.scrollTrackTo(e.target.value);
       },
-      false
+      false,
     );
 
     this.renderPlaylist();
@@ -48,7 +48,7 @@ class MusicPlayer {
   }
 
   addToPlaylist(songName, src) {
-    this.playlist.push({songName: songName, src: src});
+    this.playlist.push({ songName, src });
   }
 
   setPlayList(playlist) {
@@ -57,13 +57,12 @@ class MusicPlayer {
     this.renderPlaylist();
   }
 
-  cutString(string, length) {
+  cutString = (string, length) => {
     if (string.length > length) {
-      return string.substring(0, length - 3) + '...';
-    } else {
-      return string;
+      return `${string.substring(0, length - 3)}...`;
     }
-  }
+    return string;
+  };
 
   scrollTrackTo(porc) {
     if (this.audio) {
@@ -74,13 +73,15 @@ class MusicPlayer {
 
   renderTrackPos(isSrcoll) {
     if (this.audio) {
-      let proc = this.audio.currentTime / (this.audio.duration / 100);
-      this.rooEl.getElementsByClassName('player-controls__scroll')[0].style.background = `linear-gradient(90deg, #eeeeee ${proc}%, #777777 ${proc}%)`;
+      const proc = this.audio.currentTime / (this.audio.duration / 100);
+      this.rooEl.getElementsByClassName(
+        'player-controls__scroll',
+      )[0].style.background = `linear-gradient(90deg, #eeeeee ${proc}%, #777777 ${proc}%)`;
       if (this.isPlaying && !isSrcoll) {
         setTimeout(() => this.renderTrackPos(), 1000);
       }
     } else {
-      this.rooEl.getElementsByClassName('player-controls__scroll')[0].style.background = `linear-gradient(90deg, #eeeeee 0%, #777777 0%)`;
+      this.rooEl.getElementsByClassName('player-controls__scroll')[0].style.background = 'linear-gradient(90deg, #eeeeee 0%, #777777 0%)';
     }
   }
 
@@ -102,7 +103,7 @@ class MusicPlayer {
 
     if (this.playlist.length <= 4) {
       this.playlist.forEach((el, i) => {
-        let playlistEl = document.createElement('p');
+        const playlistEl = document.createElement('p');
         playlistEl.innerText = this.cutString(el.songName, 25);
         playlistEl.classList.add('player-playlist__songs-list-element');
         playlistEl.addEventListener('click', () => {
@@ -125,7 +126,6 @@ class MusicPlayer {
         this.audio.currentTime = 0;
         this.audio.addEventListener('ended', () => {
           this.next();
-          console.log('Song is ended');
         });
       }
       this.audio.play();
@@ -160,7 +160,7 @@ class MusicPlayer {
   prev() {
     this.stop();
     if (this.currentTrack > 0) {
-      this.currentTrack--;
+      this.currentTrack -= 1;
     } else {
       this.currentTrack = this.playlist.length - 1;
     }
@@ -171,15 +171,11 @@ class MusicPlayer {
   next() {
     this.stop();
     if (this.currentTrack < this.playlist.length - 1) {
-      this.currentTrack++;
+      this.currentTrack += 1;
     } else {
       this.currentTrack = 0;
     }
     this.switchPlay();
   }
-
-  prevPage() {}
-
-  nextPage() {}
 }
 module.exports = MusicPlayer;
