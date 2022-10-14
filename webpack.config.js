@@ -36,6 +36,15 @@ module.exports = {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist/assets/'),
         },
+        {
+          from: path.resolve(__dirname, 'src/assets/static/'),
+          to: path.resolve(__dirname, 'dist/static/'),
+          noErrorOnMissing: true,
+        },
+        {
+          from: path.resolve(__dirname, 'src/manifest.json'),
+          to: path.resolve(__dirname, 'dist/'),
+        },
       ],
     }),
     new ESLintPlugin({

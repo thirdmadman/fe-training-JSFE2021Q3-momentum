@@ -1,0 +1,23 @@
+{
+  "browser_action": {
+    "default_title": "Momentum"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "description": "Momentum is an analogue of the Chrome Web Store application of the same name. The application shows the time and username. The background image and greeting changes depending on the time of day.",
+  "icons": {
+    "128": "static/img/app/icon-128.png",
+    "16": "static/img/app/icon-16.png",
+    "32": "static/img/app/icon-32.png",
+    "48": "static/img/app/icon-48.png"
+  },
+  "manifest_version": 2,
+  "name": "Momentum",
+  "offline_enabled": true,
+  "optional_permissions": ["bookmarks", "topSites", "chrome://favicon/"],
+  "permissions": ["unlimitedStorage"],
+  "short_name": "Momentum",
+  "version": "0.1.1"
+}
