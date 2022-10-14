@@ -1,8 +1,7 @@
 class BackgroundProvider {
   constructor() {
     this.imageArray = [];
-
-    this.updateArray();
+    // this.updateArray();
   }
 
   // getNextImage() {}
