@@ -12,6 +12,16 @@ Originally done in rolling-scopes-school/thirdmadman-JSFE2021Q3, public reupload
 
 Link for original task: <https://github.com/rolling-scopes-school/tasks/blob/master/tasks/momentum/momentum-stage1.md>
 
+## Usage
+
+You can download build of the extension in branch [gh-pages](/github/thirdmadman/tree/gh-pages)
+
+* Download zip, upack folder in your desired location (good idea to put it in extensions folder, example: AppData\Local\Google\Chrome\User Data\Default\Extensions)
+* In Extensions tab, in Google Chrome, Enable Developer Mode by clicking the toggle switch next to Developer mode.
+* Click the Load unpacked button and select the extension directory.
+
+[Loading an unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked)
+
 ### Requirements has been
 
 1. Use: JS, HTML, CSS, Webpack
