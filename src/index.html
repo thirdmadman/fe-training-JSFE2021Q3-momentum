@@ -6,8 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/src/favicon.ico" type="image/x-icon" />
     <title>Momentum</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-T7999C3W');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T7999C3W"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main class="momentum-app">
       <div class="momentum-app__overlay">
         <div class="date-time">
@@ -92,7 +116,12 @@
                 <div class="group-configs__body">
                   <label class="group-configs__input-label">
                     Name:
-                    <input class="group-configs__input-text group-configs__input-text_name" type="text" maxlength="20" placeholder="Your name here" />
+                    <input
+                      class="group-configs__input-text group-configs__input-text_name"
+                      type="text"
+                      maxlength="20"
+                      placeholder="Your name here"
+                    />
                   </label>
                 </div>
               </div>
@@ -101,7 +130,12 @@
                 <div class="group-configs__body">
                   <label class="group-configs__input-label">
                     City:
-                    <input class="group-configs__input-text group-configs__input-text_city" type="text" maxlength="20" placeholder="Your city" />
+                    <input
+                      class="group-configs__input-text group-configs__input-text_city"
+                      type="text"
+                      maxlength="20"
+                      placeholder="Your city"
+                    />
                   </label>
                 </div>
               </div>
